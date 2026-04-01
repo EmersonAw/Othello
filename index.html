@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Othello</title>
+    <link rel="icon" href="Assets/Orthello Favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Othello</h1>
+    <h2 id="turn-indicator">Current Turn: Black</h2>
+    <b><div id="scoreboard">
+        <span id="black-score">Black: 2</span>
+            <div id="black-win-percentage" style="width: 50%; height: 100%; border: 5px solid #000; background-image: linear-gradient(to right, #333333 , #333333 50%, #dddddd 50%, #dddddd 100%);">
+            __________________
+         
+
+            </div>
+        <span id="white-score">White: 2</span>
+    </div></b>
+
+    <div id="game-board" >
+        <div class="cell" row="0" col="0" onclick="handleCellClick(0, 0)"></div>
+        <div class="cell" row="0" col="1" onclick="handleCellClick(0, 1)"></div>
+        <div class="cell" row="0" col="2" onclick="handleCellClick(0, 2)"></div>
+        <div class="cell" row="0" col="3" onclick="handleCellClick(0, 3)"></div>
+        <div class="cell" row="0" col="4" onclick="handleCellClick(0, 4)"></div> 
+        <div class="cell" row="0" col="5" onclick="handleCellClick(0, 5)"></div>
+        <div class="cell" row="0" col="6" onclick="handleCellClick(0, 6)"></div>
+        <div class="cell" row="0" col="7" onclick="handleCellClick(0, 7)"></div>
+        <div class="cell" row="1" col="0" onclick="handleCellClick(1, 0)"></div>
+        <div class="cell" row="1" col="1" onclick="handleCellClick(1, 1)"></div>
+        <div class="cell" row="1" col="2" onclick="handleCellClick(1, 2)"></div>
+        <div class="cell" row="1" col="3" onclick="handleCellClick(1, 3)"></div>
+        <div class="cell" row="1" col="4" onclick="handleCellClick(1, 4)"></div>
+        <div class="cell" row="1" col="5" onclick="handleCellClick(1, 5)"></div>
+        <div class="cell" row="1" col="6" onclick="handleCellClick(1, 6)"></div>  
+        <div class="cell" row="1" col="7" onclick="handleCellClick(1, 7)"></div>
+        <div class="cell" row="2" col="0" onclick="handleCellClick(2, 0)"></div>
+        <div class="cell" row="2" col="1" onclick="handleCellClick(2, 1)"></div>
+        <div class="cell" row="2" col="2" onclick="handleCellClick(2, 2)"></div>
+        <div class="cell" row="2" col="3" onclick="handleCellClick(2, 3)"></div>
+        <div class="cell" row="2" col="4" onclick="handleCellClick(2, 4)"></div>
+        <div class="cell" row="2" col="5" onclick="handleCellClick(2, 5)"></div>
+        <div class="cell" row="2" col="6" onclick="handleCellClick(2, 6)"></div>
+        <div class="cell" row="2" col="7" onclick="handleCellClick(2, 7)"></div>
+        <div class="cell" row="3" col="0" onclick="handleCellClick(3, 0)"></div>
+        <div class="cell" row="3" col="1" onclick="handleCellClick(3, 1)"></div>
+        <div class="cell" row="3" col="2" onclick="handleCellClick(3, 2)"></div>
+        <div class="cell" row="3" col="3" onclick="handleCellClick(3, 3)"></div>  
+        <div class="cell" row="3" col="4" onclick="handleCellClick(3, 4)"></div>
+        <div class="cell" row="3" col="5" onclick="handleCellClick(3, 5)"></div>
+        <div class="cell" row="3" col="6" onclick="handleCellClick(3, 6)"></div>
+        <div class="cell" row="3" col="7" onclick="handleCellClick(3, 7)"></div>
+        <div class="cell" row="4" col="0" onclick="handleCellClick(4, 0)"></div>
+        <div class="cell" row="4" col="1" onclick="handleCellClick(4, 1)"></div>
+        <div class="cell" row="4" col="2" onclick="handleCellClick(4, 2)"></div>
+        <div class="cell" row="4" col="3" onclick="handleCellClick(4, 3)"></div>
+        <div class="cell" row="4" col="4" onclick="handleCellClick(4, 4)"></div>
+        <div class="cell" row="4" col="5" onclick="handleCellClick(4, 5)"></div>
+        <div class="cell" row="4" col="6" onclick="handleCellClick(4, 6)"></div>
+        <div class="cell" row="4" col="7" onclick="handleCellClick(4, 7)"></div>
+        <div class="cell" row="5" col="0" onclick="handleCellClick(5, 0)"></div>
+        <div class="cell" row="5" col="1" onclick="handleCellClick(5, 1)"></div>
+        <div class="cell" row="5" col="2" onclick="handleCellClick(5, 2)"></div>
+        <div class="cell" row="5" col="3" onclick="handleCellClick(5, 3)"></div>
+        <div class="cell" row="5" col="4" onclick="handleCellClick(5, 4)"></div>
+        <div class="cell" row="5" col="5" onclick="handleCellClick(5, 5)"></div>
+        <div class="cell" row="5" col="6" onclick="handleCellClick(5, 6)"></div>
+        <div class="cell" row="5" col="7" onclick="handleCellClick(5, 7)"></div>
+        <div class="cell" row="6" col="0" onclick="handleCellClick(6, 0)"></div>
+        <div class="cell" row="6" col="1" onclick="handleCellClick(6, 1)"></div>
+        <div class="cell" row="6" col="2" onclick="handleCellClick(6, 2)"></div>
+        <div class="cell" row="6" col="3" onclick="handleCellClick(6, 3)"></div>
+        <div class="cell" row="6" col="4" onclick="handleCellClick(6, 4)"></div>
+        <div class="cell" row="6" col="5" onclick="handleCellClick(6, 5)"></div>
+        <div class="cell" row="6" col="6" onclick="handleCellClick(6, 6)"></div>
+        <div class="cell" row="6" col="7" onclick="handleCellClick(6, 7)"></div>
+        <div class="cell" row="7" col="0" onclick="handleCellClick(7, 0)"></div>
+        <div class="cell" row="7" col="1" onclick="handleCellClick(7, 1)"></div>
+        <div class="cell" row="7" col="2" onclick="handleCellClick(7, 2)"></div>
+        <div class="cell" row="7" col="3" onclick="handleCellClick(7, 3)"></div>
+        <div class="cell" row="7" col="4" onclick="handleCellClick(7, 4)"></div>
+        <div class="cell" row="7" col="5" onclick="handleCellClick(7, 5)"></div>
+        <div class="cell" row="7" col="6" onclick="handleCellClick(7, 6)"></div>
+        <div class="cell" row="7" col="7" onclick="handleCellClick(7, 7)"></div>
+        <div class="whitepiece" style= "display: none;">
+            
+            
+        </div>
+
+      
+
+     
+       <div class="ResetButton"> 
+       <button onclick ="createboard(); renderBoard(); resetTurns()" >Reset Game</button>
+       </div>
+    </div>  
+
+
+
+
+        <script src="script.js"></script>
+</body>
+</html>
